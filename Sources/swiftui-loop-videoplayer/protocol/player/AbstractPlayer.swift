@@ -277,10 +277,8 @@ extension AbstractPlayer{
     
     /// Sets the playback speed for the video playback.
     /// - Parameter speed: A `Float` value representing the playback speed (e.g., 1.0 for normal speed, 0.5 for half speed, 2.0 for double speed).
-    /// If the value is out of range (negative), it will be clamped to the nearest valid value.
     func setPlaybackSpeed(_ speed: Float) {
-        let clampedSpeed = max(0.0, speed)  // Clamp to non-negative values, or adjust the upper bound as needed
-        player?.rate = clampedSpeed
+        player?.rate = speed
     }
 
     /// Sets the subtitles for the video playback to a specified language or turns them off.
