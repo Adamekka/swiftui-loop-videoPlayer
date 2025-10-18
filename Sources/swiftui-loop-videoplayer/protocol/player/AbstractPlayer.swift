@@ -226,7 +226,7 @@ extension AbstractPlayer{
             return
         }
         
-        player.seek(to: seekTime) { [weak self] success in
+        player.seek(to: seekTime, toleranceBefore: .zero, toleranceAfter: .zero) { [weak self] success in
             Task { @MainActor in
                 self?.seekCompletion(success: success, autoPlay: play)
             }
